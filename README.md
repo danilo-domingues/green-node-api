@@ -56,7 +56,7 @@ Então, configure o seu VS Code:
 }
 ```
 
-* Salve o arwuivo!
+* Salve o arquivo!
 
 
 ## Uuuuuuuuuuhl! pau na maquina!!!
