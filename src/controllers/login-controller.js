@@ -24,9 +24,9 @@ class LoginController {
         }
     }
 
-    async get(req, res, next) {
+    async logar(req, res, next) {
         try {
-            var data = await repository.get();
+            var data = await repository.get(req.body);
             res.status(200).send(data);
         } catch (error) {
             res.status(500).send({
@@ -36,7 +36,6 @@ class LoginController {
 
         }
     }
-
 
     async getById(req, res, next) {
         try {
@@ -49,11 +48,11 @@ class LoginController {
         }
     }
 
-   async put(req, res, next) {
+    async put(req, res, next) {
         try {
             await repository.update(req.params.id, req.body);
             res.status(200).send({
-                message: 'Dados pessoais atualizado com sucesso!'
+                message: 'Dados de login atualizados com sucesso!'
             });
         } catch (e) {
             res.status(500).send({
@@ -63,7 +62,6 @@ class LoginController {
     };
 
 }
-
 
 
 module.exports = new LoginController;

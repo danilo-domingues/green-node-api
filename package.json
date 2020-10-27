@@ -4,7 +4,8 @@
   "description": "APIs em nodejs referente ao projeto/startup green-fiap",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/server.js"
   },
   "author": "Danilo Domingues/Guilherme Jeronymo",
   "license": "ISC",

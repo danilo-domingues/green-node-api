@@ -21,13 +21,12 @@ const pessoaRoute = require('./routes/pessoa-route');
 const loginRoute = require('./routes/login-route');
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded(
-    {
-        extended: false
-    }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 
 app.use('/pessoa', pessoaRoute);
 app.use('/login', loginRoute);
 
- 
+
 module.exports = app;

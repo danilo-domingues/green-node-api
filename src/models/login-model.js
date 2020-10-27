@@ -4,19 +4,23 @@ const Login = mongoose.Schema;
 
 const login = new Login({
 
-    username:{
+    username: {
         type: String,
         require: true,
     },
-    senha:{
+    password: {
         type: String,
         required: true
     },
-    ativo:{
+    ativo: {
         type: Boolean,
         required: true,
         default: true
-    }
+    },
+    pessoa: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Pessoas'
+    },
 });
 
 module.exports = mongoose.model('Login', login);

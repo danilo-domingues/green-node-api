@@ -5,8 +5,8 @@ const controller = require('../controllers/login-controller');
 
 
 router.post('/createLogin', controller.post);
-router.get('/getLogin', controller.get);
 router.get('/:id', controller.getById);
-router.put('/:id', controller.getById);
+router.put('/:id', controller.put);
+router.post('/logar', controller.logar);
 
 module.exports = router;

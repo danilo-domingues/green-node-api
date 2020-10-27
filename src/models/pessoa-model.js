@@ -4,28 +4,34 @@ const Pessoa = mongoose.Schema;
 
 const pessoa = new Pessoa({
 
-    nome:{
+    nome: {
         type: String,
         required: true
     },
-    sobrenome:{
+    sobrenome: {
         type: String,
         required: true
     },
-    hashId:{
+    hashId: {
+        type: String,
+        required: true,
+        index: {
+            unique: true,
+            sparse: true
+        }
+    },
+    endereco: {
         type: String,
         required: true
     },
-    endereco:{
+    sexo: {
         type: String,
-        required: true
-    },
-    sexo:{
-        type: String,
-        required: true
+        required: true,
+        enum: ['Masculino', 'Feminino', 'Indefinido'],
+        default: 'Indefinido'
     }
 
 });
 
 
-module.exports = mongoose.model('Pessoa',pessoa);
+module.exports = mongoose.model('Pessoa', pessoa);
