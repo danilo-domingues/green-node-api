@@ -3,9 +3,11 @@
 const app = require('../src/app');
 const http = require('http');
 const debug = require('debug')('green-nodeapis:server');
+const cors = require('cors');
 
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
+app.use(cors());
 
 const server = http.createServer(app);
 

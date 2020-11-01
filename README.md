@@ -10,8 +10,8 @@
 
 Tenha o Node.Js 10.14.0 ou superior instalado.
 
-## Como instalar o Node.Js
-- Sou engenheiro de software e não suporte... dá seus pulos! hahahahah!
+## Como instalar o Node.Js ?
+- Sou engenheiro de software e não suporte... dá seus pulos! (risos)
 - Calma, foi só uma brincadeira, a seguir vou tentar ensinar passo a passo, desculpe se faltar algo, estou tentando fazer o melhor que posso, para auxilia-lo.
 
 

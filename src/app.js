@@ -4,9 +4,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const config = require('./config');
+const cors = require('cors');
 
 const app = express();
+
 const router = express.Router();
+app.use(cors());
 
 //Connect to Mongo
 mongoose.connect(config.connectionString);
