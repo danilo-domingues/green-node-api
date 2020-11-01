@@ -1,10 +1,11 @@
+'use strict'
 const mongoose = require('mongoose');
-const Produto = mongoose.model('Produto');
+const Produto = require('../models/produto-model');
 
 exports.get = async () => {
     const res = await Produto.find({
-        active: true
-    }, 'title price');
+        ativo: true
+    }, 'titulo preco');
     return res;
 }
 
@@ -12,8 +13,8 @@ exports.getBySlug = async (slug) => {
     const res = await Produto
         .findOne({
             slug: slug,
-            active: true
-        }, 'title description price slug tags');
+            ativo: true
+        }, 'titulo descricao preco slug tags');
     return res;
 }
 
@@ -27,23 +28,24 @@ exports.getByTag = async (tag) => {
     const res = Produto
         .find({
             tags: tag,
-            active: true
-        }, 'title description price slug tags');
+            ativo: true
+        }, 'titulo descricao preco slug tags');
     return res;
 }
 
 exports.create = async (data) => {
-    var Produto = new Produto(data);
-    await Produto.save();
+    var produto = new Produto(data);
+    var result = await produto.save();
+    return result;
 }
 
 exports.update = async (id, data) => {
     await Produto
         .findByIdAndUpdate(id, {
             $set: {
-                title: data.title,
-                description: data.description,
-                price: data.price,
+                titulo: data.titulo,
+                descricao: data.descricao,
+                preco: data.preco,
                 slug: data.slug
             }
         });

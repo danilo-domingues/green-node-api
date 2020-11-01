@@ -37,4 +37,4 @@ const produto = new Produto({
     }
 });
 
-module.exports = mongoose.model('Produto', produto);
+module.exports = mongoose.model('Produtos', produto);
