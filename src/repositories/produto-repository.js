@@ -5,7 +5,7 @@ const Produto = require('../models/produto-model');
 exports.get = async () => {
     const res = await Produto.find({
         ativo: true
-    }, 'titulo preco');
+    }, 'titulo preco descricao image');
     return res;
 }
 
