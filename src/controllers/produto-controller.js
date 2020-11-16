@@ -51,6 +51,18 @@ class ProdutoController {
         }
     }
 
+
+    async getByName(req, res, next) {
+        try {
+            const data = await repository.getByName(req.params.name);
+            res.status(200).send(data);
+        } catch (e) {
+            res.status(500).send({
+                message: 'Falha ao processar sua requisição'
+            });
+        }
+    }
+
     async post(req, res, next) {
 
 

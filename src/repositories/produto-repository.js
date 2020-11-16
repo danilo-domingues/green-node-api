@@ -1,4 +1,7 @@
 'use strict'
+const {
+    names
+} = require('debug');
 const mongoose = require('mongoose');
 const Produto = require('../models/produto-model');
 
@@ -13,6 +16,17 @@ exports.getBySlug = async (slug) => {
     const res = await Produto
         .findOne({
             slug: slug,
+            ativo: true
+        }, 'titulo descricao preco slug tags');
+    return res;
+}
+
+exports.getByName = async (name) => {
+    const res = await Produto
+        .find({
+            titulo: {
+                $regex: '.*' + name + '.*'
+            },
             ativo: true
         }, 'titulo descricao preco slug tags');
     return res;
